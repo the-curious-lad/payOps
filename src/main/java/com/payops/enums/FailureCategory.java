@@ -1,0 +1,11 @@
+package com.payops.enums;
+
+public enum FailureCategory {
+    UNKNOWN_PROVIDER_OUTCOME,
+    NETWORK_TIMEOUT,
+    PROVIDER_UNAVAILABLE,
+    PAYER_DECLINED,
+    INVALID_REQUEST,
+    AUTHENTICATION_ERROR,
+    SYSTEM_ERROR
+}

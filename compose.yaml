@@ -1,0 +1,26 @@
+
+services:
+  postgres:
+    image: postgres:18
+    container_name: payops-postgres
+    environment:
+      POSTGRES_DB: payops
+      POSTGRES_USER: payops
+      POSTGRES_PASSWORD: payops_dev_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - payops_postgres_data:/var/lib/postgresql
+
+  rabbitmq:
+    image: rabbitmq:4-management
+    container_name: payops-rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: payops
+      RABBITMQ_DEFAULT_PASS: payops_dev_password
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+volumes:
+  payops_postgres_data:
